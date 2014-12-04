@@ -1,6 +1,17 @@
 extends layout
 
 block body
-  div.container
-    h1= title
-    p Welcome to #{title}
+  div.container.frontpage
+    div.text-right
+      a.btn.btn-link(href="/login")
+        | Login
+    include ./flash
+    div.frontpage-headline
+      img.logo.logo-lg.img-responsive(src="/images/logo.png")
+      h2
+        | Get ready to become a healthier version of yourself!
+    div.frontpage-register
+      form(method="POST")
+        input.input-lg(type="email", name="email" placeholder="Your email")
+        button.btn.btn-primary.btn-lg(type="submit")
+          | Notify Me
