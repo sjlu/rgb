@@ -3,16 +3,27 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "node-dev ./bin/www"
+    "web": "node-dev ./bin/web",
+    "worker": "node-dev ./bin/worker",
+    "build": "./node_modules/gulp/bin/gulp.js",
+    "postinstall": "bower install",
+    "deploy web": "./node_modules/naught/lib/main.js deploy naught-web.ipc",
+    "deploy worker": "./node_modules/naught/lib/main.js deploy naught-worker.ipc",
+    "start web": "./node_modules/naught/lib/main.js start --ipc-file naught-web.ipc --log naught-web.log --stdout stdout-web.log --stderr stderr-web.log bin/web",
+    "start worker": "./node_modules/naught/lib/main.js start --ipc-file naught-worker.ipc --log naught-worker.log --stdout stdout-worker.log --stderr stderr-worker.log bin/worker",
+    "stop web": "./node_modules/naught/lib/main.js naught-web.ipc",
+    "stop worker": "./node_modules/naught/lib/main.js naught-worker.ipc"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.1",
     "debug": "^0.7.4",
+    "dotenv": "^0.4.0",
     "express": "~4.2.0",
     "jade": "~1.3.0",
+    "lodash": "^2.4.1",
     "morgan": "~1.0.0",
+    "naught": "^1.5.0",
     "static-favicon": "~1.0.0"
   },
   "devDependencies": {
