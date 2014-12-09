@@ -7,12 +7,14 @@
     "worker": "./node_modules/node-dev/bin/node-dev ./bin/worker",
     "build": "./node_modules/gulp/bin/gulp.js",
     "postinstall": "./node_modules/bower/bin/bower install",
-    "deploy web": "./node_modules/naught/lib/main.js deploy /var/run/wolfpack-web.ipc",
-    "deploy worker": "./node_modules/naught/lib/main.js deploy /var/run/wolfpack-worker.ipc",
-    "start web": "./node_modules/naught/lib/main.js start --ipc-file /var/run/wolfpack-web.ipc --log /var/log/wolfpack/naught-web.log --stdout /var/log/wolfpack/stdout-web.log --stderr /var/log/wolfpack/stderr-web.log bin/web",
-    "start worker": "./node_modules/naught/lib/main.js start --ipc-file /var/run/wolfpack-worker.ipc --log /var/log/wolfpack/naught-worker.log --stdout /var/log/wolfpack/stdout-worker.log --stderr /var/log/wolfpack/stderr-worker.log bin/worker",
-    "stop web": "./node_modules/naught/lib/main.js /var/run/wolfpack-web.ipc",
-    "stop worker": "./node_modules/naught/lib/main.js /var/run/wolfpack-worker.ipc"
+    "deploy web": "./deploy.sh web",
+    "deploy worker": "./deploy.sh worker",
+    "restart web": "./node_modules/naught/lib/main.js deploy ./wolfpack-web.ipc",
+    "restart worker": "./node_modules/naught/lib/main.js deploy ./wolfpack-worker.ipc",
+    "start web": "./node_modules/naught/lib/main.js start --ipc-file wolfpack-web.ipc --log ./log/wolfpack/naught-web.log --stdout ./log/wolfpack/stdout-web.log --stderr ./log/wolfpack/stderr-web.log bin/web",
+    "start worker": "./node_modules/naught/lib/main.js start --ipc-file wolfpack-worker.ipc --log ./log/wolfpack/naught-worker.log --stdout ./log/wolfpack/stdout-worker.log --stderr ./log/wolfpack/stderr-worker.log bin/worker",
+    "stop web": "./node_modules/naught/lib/main.js ./wolfpack-web.ipc",
+    "stop worker": "./node_modules/naught/lib/main.js ./wolfpack-worker.ipc"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
