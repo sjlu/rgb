@@ -7,11 +7,16 @@ block body
         | Login
     include ./flash
     div.frontpage-headline
-      img.logo.logo-lg.img-responsive(src="/images/logo.png")
+      h1
+        | basho
+      h2
+        | effortless announcements
     div.frontpage-register
+      h4
+        | register me for the private beta
       form(method="POST")
         div.input-group
           input.input-lg.form-control(type="email", name="email" placeholder="Your email")
           span.input-group-btn
             button.btn.btn-primary.btn-lg(type="submit")
-              | Notify Me
+              i.fa.fa-arrow-right
