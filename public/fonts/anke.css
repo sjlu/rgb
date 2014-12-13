@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Anke';
+    src: url('anke-webfont.eot');
+    src: url('anke-webfont.eot?#iefix') format('embedded-opentype'),
+         url('anke-webfont.woff2') format('woff2'),
+         url('anke-webfont.woff') format('woff'),
+         url('anke-webfont.ttf') format('truetype'),
+         url('anke-webfont.svg#ankeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
