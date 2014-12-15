@@ -14,7 +14,8 @@
     "start web": "./node_modules/naught/lib/main.js start --ipc-file basho-web.ipc --log ./log/basho/naught-web.log --stdout ./log/basho/stdout-web.log --stderr ./log/basho/stderr-web.log bin/web",
     "start worker": "./node_modules/naught/lib/main.js start --ipc-file basho-worker.ipc --log ./log/basho/naught-worker.log --stdout ./log/basho/stdout-worker.log --stderr ./log/basho/stderr-worker.log bin/worker",
     "stop web": "./node_modules/naught/lib/main.js ./basho-web.ipc",
-    "stop worker": "./node_modules/naught/lib/main.js ./basho-worker.ipc"
+    "stop worker": "./node_modules/naught/lib/main.js ./basho-worker.ipc",
+    "gulp": "./node_modules/gulp/bin/gulp.js; ./node_modules/gulp/bin/gulp.js watch"
   },
   "dependencies": {
     "MD5": "^1.2.1",

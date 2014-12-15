@@ -40,7 +40,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('watch', function() {
-  livereload.listen();
+  livereload.listen(22746);
   gulp.watch('./public/styles/*.styl', ['stylus']).on('change', livereload.changed);
   gulp.watch('./public/styles/bootstrap.less', ['less']).on('change', livereload.changed);
   gulp.watch('./views/*').on('change', livereload.changed);
