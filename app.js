@@ -4,8 +4,14 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('./lib/mongoose');
 var app = express();
 var config = require('./lib/config');
+var redis = require('./lib/redis');
+var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
+var flash = require('express-flash');
+var middlewares = require('./middlewares');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -16,10 +22,25 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(session({
+  secret: config.SESSION_SECRET,
+  store: new RedisStore({
+    client: redis
+  }),
+  saveUninitialized: true,
+  resave: true
+}));
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// middlewares
+app.use(middlewares.getUserFromAuth);
+
+// routes
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+app.use('/login', require('./routes/login'));
+app.use('/register', require('./routes/register'));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
