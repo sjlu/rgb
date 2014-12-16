@@ -38,7 +38,7 @@ app.use(middlewares.getUserFromAuth);
 
 // routes
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+app.use('/api', require('./routes/api'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 app.use('/client', require('./routes/client'));

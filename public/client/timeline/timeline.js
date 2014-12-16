@@ -1,3 +1,5 @@
-basho.controller('timeline', function($scope) {
+basho.controller('timeline', function($scope, $http) {
+
+
 
 });
