@@ -11,7 +11,7 @@ var redis = require('./lib/redis');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 var flash = require('express-flash');
-var middlewares = require('./middlewares');
+var middlewares = require('./lib/middlewares');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,6 +41,7 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
+app.use('/client', require('./routes/client'));
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

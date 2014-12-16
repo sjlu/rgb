@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var middlewares = require('../middlewares');
-var models = require('../models');
+var middlewares = require('../lib/middlewares');
+var models = require('../lib/models');
 var validator = require('validator');
 var _ = require('lodash');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   if (req.user) {
-    return res.redirect('/');
+    return res.redirect('/client');
   }
 
   return res.render('index');

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models');
-var middlewares = require('../middlewares');
+var models = require('../lib/models');
+var middlewares = require('../lib/middlewares');
 var auth = require('../lib/auth');
 
 router.get('/', middlewares.redirectIfLoggedIn, function(req, res) {
