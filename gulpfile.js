@@ -73,7 +73,8 @@ gulp.task('watch', function() {
   livereload.listen(22746);
   gulp.watch('./public/client/**/*.js', ['js']).on('change', livereload.changed);
   gulp.watch('./public/client/**/*.jade', ['html']).on('change', livereload.changed);
-  gulp.watch('./public/styles/*.styl', ['stylus']).on('change', livereload.changed);
+  gulp.watch('./public/client/**/*.styl', ['stylus']).on('change', livereload.changed);
+  gulp.watch('./public/styles/**/*.styl', ['stylus']).on('change', livereload.changed);
   gulp.watch('./public/styles/bootstrap.less', ['less']).on('change', livereload.changed);
   gulp.watch('./views/*').on('change', livereload.changed);
 });
