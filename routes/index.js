@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var email = req.body.email;
   if (!validator.isEmail(email)) {
-    req.flash('error', 'Not a valid email address,');
+    req.flash('error', 'Not a valid email address.');
     return res.redirect('/');
   }
 
