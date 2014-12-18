@@ -1,4 +1,4 @@
-basho.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+rgb.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
   $locationProvider.html5Mode(false);
 

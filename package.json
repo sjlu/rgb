@@ -1,5 +1,5 @@
 {
-  "name": "basho",
+  "name": "rgb",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,12 +9,12 @@
     "postinstall": "./node_modules/bower/bin/bower install",
     "deploy web": "./deploy.sh web",
     "deploy worker": "./deploy.sh worker",
-    "restart web": "./node_modules/naught/lib/main.js deploy ./basho-web.ipc",
-    "restart worker": "./node_modules/naught/lib/main.js deploy ./basho-worker.ipc",
-    "start web": "./node_modules/naught/lib/main.js start --ipc-file basho-web.ipc --log ./log/basho/naught-web.log --stdout ./log/basho/stdout-web.log --stderr ./log/basho/stderr-web.log bin/web",
-    "start worker": "./node_modules/naught/lib/main.js start --ipc-file basho-worker.ipc --log ./log/basho/naught-worker.log --stdout ./log/basho/stdout-worker.log --stderr ./log/basho/stderr-worker.log bin/worker",
-    "stop web": "./node_modules/naught/lib/main.js ./basho-web.ipc",
-    "stop worker": "./node_modules/naught/lib/main.js ./basho-worker.ipc",
+    "restart web": "./node_modules/naught/lib/main.js deploy ./rgb-web.ipc",
+    "restart worker": "./node_modules/naught/lib/main.js deploy ./rgb-worker.ipc",
+    "start web": "./node_modules/naught/lib/main.js start --ipc-file rgb-web.ipc --log ./log/rgb/naught-web.log --stdout ./log/rgb/stdout-web.log --stderr ./log/rgb/stderr-web.log bin/web",
+    "start worker": "./node_modules/naught/lib/main.js start --ipc-file rgb-worker.ipc --log ./log/rgb/naught-worker.log --stdout ./log/rgb/stdout-worker.log --stderr ./log/rgb/stderr-worker.log bin/worker",
+    "stop web": "./node_modules/naught/lib/main.js ./rgb-web.ipc",
+    "stop worker": "./node_modules/naught/lib/main.js ./rgb-worker.ipc",
     "gulp": "./node_modules/gulp/bin/gulp.js; ./node_modules/gulp/bin/gulp.js watch"
   },
   "dependencies": {

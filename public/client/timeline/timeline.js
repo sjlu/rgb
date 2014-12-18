@@ -1,4 +1,4 @@
-basho.controller('timeline', function($scope, $http) {
+rgb.controller('timeline', function($scope, $http) {
 
 
 });
