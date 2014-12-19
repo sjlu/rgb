@@ -3,7 +3,7 @@ rgb.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $locationProvider.html5Mode(false);
 
   var routes = {
-    '/': 'timeline',
+    '/': 'overview',
   };
 
   for (var route in routes) {

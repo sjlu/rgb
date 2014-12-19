@@ -1,0 +1,8 @@
+div.status-pill.row(ng-class="{red:status.status === 'busy',green:status.status === 'free',blue:status.status === 'none'}")
+  div.col-md-2.text-center
+    img.img-circle(ng-src="{{user.gravatar}}")
+  div.col-md-10
+    div.status-user
+      | {{user.name}}
+    div.status-details
+      | {{status.details}}
